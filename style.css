@@ -1,53 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&display=swap'); 
 
 :root {
   --cor-principal: #012997;
-  --cor-secundaria: #990108;
+  --cor-secundaria: #4169E1; /* Azul Royal no lugar do vermelho */
   --cor-destaque: #1b9173;
   --fundo-claro: #f8f9fa;
+  --alto-contraste-fundo: #000000;
+  --alto-contraste-texto: #ffffff;
+  --alto-contraste-link: #ffffff;
 }
 
 body {
   font-family: Georgia, serif;
   background-color: var(--fundo-claro);
-  padding-bottom: 60px;
   color: #333;
+  padding-bottom: 60px;
+  transition: all 0.3s ease;
 }
 
-/* Cabeçalho */
-header {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-header img {
-  margin-bottom: 20px;
-}
-
-header h1 {
-  margin-bottom: 20px;
-}
-
-header p {
-  margin-bottom: 1rem;
-}
-
-/* Títulos */
+/* Títulos usando Chakra Petch para destaque */
 h1, h2, h5 {
-  color: var(--cor-secundaria);
+  font-family: 'Chakra Petch', sans-serif;
+  color: var(--cor-secundaria); /* agora azul royal */
   font-weight: 600;
+}
+
+header, footer, .formulario {
+  transition: all 0.3s ease;
 }
 
 /* Cards */
 .card {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   border: none;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
   margin-bottom: 30px;
+  border-radius: 6px;
+  background-color: #ffffff; /* balões brancos por padrão */
+  color: #333;
 }
 
-.card:hover {
-  transform: scale(1.01);
+.card:hover { 
+  transform: scale(1.005);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
 }
 
 .card-img-top {
@@ -55,41 +50,115 @@ h1, h2, h5 {
   height: 180px;
   object-fit: cover;
   object-position: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
-/* Botões de link (Saiba mais) */
-.btn-link {
-  color: var(--cor-principal);
-  font-weight: 600;
-  text-decoration: none;
+/* Menu de acessibilidade */
+.menu-acessibilidade {
+  position: fixed;
+  top: 50%; /* centraliza verticalmente */
+  right: 20px;
+  transform: translateY(-50%); /* ajuste para centralização exata */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.btn-link:hover {
-  color: var(--cor-destaque);
-  text-decoration: underline;
+#botao-acessibilidade {
+  writing-mode: vertical-rl; /* mantém a rotação vertical */
+  transform: rotate(180deg); /* ajusta a rotação para leitura correta */
+  margin-bottom: 10px;
 }
 
-/* Modais */
-.modal-content {
+.opcoes-acessibilidade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* espaçamento uniforme entre os botões */
+}
+
+.opcoes-acessibilidade button { 
+  width: 50px; /* largura uniforme */
+  height: 40px; /* altura uniforme */
+  padding: 0;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+
+.opcoes-acessibilidade button:hover {
+  background-color: var(--cor-destaque);
+  color: #fff;
+}
+
+.apresenta-lista { display: none; }
+
+/* Tema escuro (alto contraste) */
+.alto-contraste {
+  background-color: var(--alto-contraste-fundo);
+  color: var(--alto-contraste-texto);
+}
+
+.alto-contraste header,
+.alto-contraste footer,
+.alto-contraste .formulario {
+  background-color: var(--alto-contraste-fundo);
+  color: var(--alto-contraste-texto);
+}
+
+.alto-contraste .nav-link {
+  color: var(--alto-contraste-link);
+}
+
+.alto-contraste .btn-primary,
+.alto-contraste .formulario button {
+  background-color: var(--alto-contraste-link);
+  color: var(--alto-contraste-fundo);
+}
+
+/* Cards no modo escuro */
+.alto-contraste .card {
+  background-color: #000000; /* balões pretos */
+  color: var(--alto-contraste-texto); /* texto branco */
+}
+
+/* Contorno visível ao focar com teclado (discreto) */
+:focus {
+  outline: 2px solid #555; 
+  outline-offset: 3px;
+}
+
+/* Destaque especial para seções com TAB */
+section:focus {
+  outline: 3px solid #aaa; 
+  outline-offset: 6px;
+  background-color: #fffdf5; 
   border-radius: 8px;
+  scroll-margin-top: 80px;
+  transition: background-color 0.3s ease, outline 0.3s ease;
 }
 
-.modal-body img {
-  margin-top: 15px;
-  border-radius: 5px;
+/* Badges de viagem */
+.badge {
+  font-weight: 500;
+  margin-right: 5px;
 }
 
-/* Rodapé (caso adicione) */
+/* Forms */
+.formulario input, .formulario textarea {
+  transition: border-color 0.2s ease;
+}
+
+.formulario input:focus, .formulario textarea:focus {
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 3px rgba(27,145,115,0.5);
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 30px 0;
-  background-color: #e9ecef;
-}
-
-footer a {
-  color: var(--cor-principal);
-}
-
-footer a:hover {
-  color: var(--cor-destaque);
+  background-color: var(--fundo-claro);
+  color: #555;
+  font-size: 0.9rem;
 }

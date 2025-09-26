@@ -1,87 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <title>Portfólio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="container text-center mt-4 mb-5">
-    <img src="20250413_003022.jpg" alt="Foto de Marcos Antonio" class="rounded-circle" width="150" height="150">
-    <p class="lead">Marcos Antonio Dovalli da Luz</p>
-    <h1>Estudante em busca da primeira experiência profissional</h1>
-    <p>Olá! Meu nome é Marcos Antonio, e seja muito bem-vindo ao meu portfólio profissional — um projeto escolar do curso Start by Alura, criado para apoiar jovens no desenvolvimento tecnológico e profissional. Agora, unindo esses dois propósitos, apresento o foco deste portfólio.</p>
-    <p>Tenho 17 anos, sou brasileiro e fascinado pelas mais diversas culturas. Por isso, abordarei histórias e tradições de países que conheci em recentes viagens culturais — experiências que desejo levar comigo na busca pelo meu sonho: trabalhar com turismo e história.</p>
-    <h2>Viagens Culturais</h2>
-    <div>
-      <p class="badge bg-secondary">Dubai</p>
-      <p class="badge bg-secondary">Itália</p>
-    </div>
+
+  <!-- Menu de Navegação -->
+  <header class="p-3">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <img src="20250413_003022.jpg" alt="Foto de perfil" class="rounded-circle" width="80" height="80">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Cultura e História</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <img src="20250406_142948.jpg" class="card-img-top" alt="Foto de Dubai">
-            <div class="card-body">
-              <h5 class="card-title">Dubai</h5>
-              <p class="card-text">Sem dúvida, Dubai é um dos lugares mais deslumbrantes e luxuosos do mundo. Lar de ícones como o Burj Khalifa, o Burj Al Arab, a ilha artificial The Palm e o gigantesco Dubai Mall. No entanto, engana-se quem pensa que Dubai é apenas uma vitrine de ostentação. Por trás dessas maravilhas há uma rica história e cultura vibrante. Venha conhecer este incrível emirado, onde tradição e modernidade se encontram.</p>
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal1">Saiba mais</button>
-            </div>
-          </div>
-        </div>
+  <!-- Menu de Acessibilidade -->
+  <div id="acessibilidade" class="menu-acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold" aria-expanded="false" aria-controls="opcoes-acessibilidade">
+      Acessibilidade
+    </button>
+    <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+      <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
+      <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="Diminuir o tamanho da fonte">A-</button>
+      <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores">
+        <i class="bi bi-lightbulb"></i>
+      </button>
+    </div>
+  </div>
 
-        <div class="col-md-6">
-          <div class="card">
-            <img src="IMG-20250323-WA0035.jpg" class="card-img-top" alt="Foto da Itália">
-            <div class="card-body">
-              <h5 class="card-title">Itália</h5>
-              <p class="card-text">A Itália é um dos países mais encantadores e acolhedores do mundo, com um povo de cultura forte e expresiva. Fortemente ligada às tradições, manifesta-se em sabores únicos, cidades históricas e monumentos que narram séculos de transformações. Da queda do Império Romano aos movimentos cristãos, do fascismo às guerras mundiais. Mais do que um destino turístico, a Itália é um cenário vivo, onde o passado e o presente se entrelaçam.</p>
-              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal2">Saiba mais</button>
-            </div>
+  <!-- Seção Início -->
+  <section id="inicio" class="container text-center my-5" tabindex="0">
+    <h1>Marcos Antonio Dovalli da Luz</h1>
+    <p class="lead">Estudante em busca da primeira experiência profissional</p>
+    <p>Olá! Meu nome é Marcos Antonio, e seja muito bem-vindo ao meu portfólio profissional — um projeto escolar do curso Start by Alura.</p>
+    <p>Tenho 17 anos, sou brasileiro e fascinado pelas mais diversas culturas. Neste portfólio compartilho experiências culturais em viagens.</p>
+    <h2>Viagens Culturais</h2>
+    <div>
+      <span class="badge bg-secondary">Dubai</span>
+      <span class="badge bg-secondary">Itália</span>
+    </div>
+  </section>
+
+  <!-- Seção Portfólio -->
+  <section id="portfolio" class="container my-5" tabindex="0">
+    <h2 class="mb-4">Cultura e História</h2>
+    <div class="row">
+      <!-- Card Dubai -->
+      <div class="col-md-6">
+        <div class="card">
+          <img src="20250406_142948.jpg" class="card-img-top" alt="Vista de Dubai com prédios modernos iluminados à noite" title="Foto pessoal tirada em Dubai por Marcos Antonio" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Dubai</h5>
+            <p class="card-text">Dubai é um dos lugares mais deslumbrantes do mundo. Por trás dos arranha-céus e ilhas artificiais, há uma cultura árabe vibrante e uma rica história.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">Saiba mais</button>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+      <!-- Card Itália -->
+      <div class="col-md-6">
+        <div class="card">
+          <img src="IMG-20250323-WA0035.jpg" class="card-img-top" alt="Paisagem da Itália com monumentos históricos" title="Foto pessoal tirada na Itália por Marcos Antonio" loading="lazy">
+          <div class="card-body">
+            <h5 class="card-title">Itália</h5>
+            <p class="card-text">A Itália encanta por sua história milenar, seus monumentos, sabores e tradições que marcam presença até os dias de hoje.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">Saiba mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Modal 1: Dubai -->
+  <!-- Modais -->
+  <!-- Modal Dubai -->
   <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modal1Label">Dubai</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
-          <p>Sua história começa como uma vila de pescadores de pérolas localizada na costa da atual Dubai, uma região com muitos comércios e feiras, que só teve seu verdadeiro crescimento econômico com a descoberta do petróleo. A partir disso, os Emirados usaram sua ascensão para mostrar ao mundo a riqueza da cultura árabe.</p>
-          <img src="20250412_232010.jpg" alt="Imagem de Dubai" class="img-fluid">
+          <p>Dubai começou como uma vila de pescadores e comerciantes de pérolas. Com a descoberta do petróleo, cresceu rapidamente, transformando-se em um centro mundial que combina tradição e modernidade.</p>
+          <img src="20250412_232010.jpg" alt="Foto panorâmica de Dubai mostrando arranha-céus" class="img-fluid" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal 2: Itália -->
+  <!-- Modal Itália -->
   <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modal2Label">Itália</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
-          <p>A história da Itália é marcada por grande riqueza cultural e política. Na Antiguidade, foi o centro do poderoso Império Romano. Após sua queda, no século V, o território dividiu-se em vários reinos e cidades-estado. No século XIX, líderes como Garibaldi e Cavour promoveram o Risorgimento, unificando o país em 1861. Já no século XX, a Itália viveu o fascismo sob Mussolini, participou da Segunda Guerra e tornou-se uma república em 1946. Desde então, é uma democracia moderna e influente.</p>
-          <img src="20250313_110209~2.jpg" alt="Imagem da Itália" class="img-fluid">
+          <p>A Itália foi o berço do Império Romano e, séculos depois, do movimento de unificação conhecido como Risorgimento. Hoje, é um dos países mais influentes cultural e historicamente do mundo.</p>
+          <img src="20250313_110209~2.jpg" alt="Paisagem urbana da Itália com prédios históricos" class="img-fluid" loading="lazy">
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Seção Contato -->
+  <section id="contato" class="container my-5" tabindex="0">
+    <h2 class="mb-4">Entre em contato</h2>
+    <form class="formulario">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+      </div>
+      <div class="mb-3">
+        <label for="mensagem" class="form-label">Mensagem</label>
+        <textarea class="form-control" id="mensagem" rows="4" placeholder="Escreva sua mensagem"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-4">
+    <p>Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
+  </footer>
+
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
